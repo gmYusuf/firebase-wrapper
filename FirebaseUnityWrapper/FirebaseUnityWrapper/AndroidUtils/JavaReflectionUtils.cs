@@ -1,4 +1,4 @@
-﻿namespace HuaweiMobileServices.Utils
+﻿namespace AndroidUtils
 {
 
     using UnityEngine;

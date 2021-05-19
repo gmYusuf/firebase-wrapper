@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace HuaweiMobileServices.Utils
+namespace AndroidUtils
 {
     using UnityEngine;
 

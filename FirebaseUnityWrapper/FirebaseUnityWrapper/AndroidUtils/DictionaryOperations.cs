@@ -5,7 +5,7 @@ using System.Xml;
 using System.Xml.Linq;
 using UnityEngine;
 
-namespace HuaweiMobileServices.Utils
+namespace AndroidUtils
 {
     internal static class DictionaryOperations
     {

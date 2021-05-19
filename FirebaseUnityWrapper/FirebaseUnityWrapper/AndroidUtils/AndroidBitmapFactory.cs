@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
-namespace HuaweiMobileServices.Utils
+namespace AndroidUtils
 {
     public class AndroidBitmapFactory : JavaObjectWrapper
     {
