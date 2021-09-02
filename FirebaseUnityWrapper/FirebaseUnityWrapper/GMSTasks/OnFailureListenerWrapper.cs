@@ -2,7 +2,7 @@
 using System;
 using UnityEngine;
 
-namespace FirebaseUnityWrapper.Base
+namespace GMSTasks
 {
 
     // Wrapper for com.google.android.gms.tasks.OnFailureListener

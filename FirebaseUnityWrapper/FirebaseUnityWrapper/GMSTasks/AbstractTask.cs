@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using System;
 
-namespace FirebaseUnityWrapper.Base
+namespace GMSTasks
 {
 
     internal abstract class AbstractTask<T> : JavaObjectWrapper, ITask<T>

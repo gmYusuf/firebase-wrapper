@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FirebaseUnityWrapper.Base
+namespace GMSTasks
 {
 
     // Wrapper for com.google.android.gms.tasks.Task

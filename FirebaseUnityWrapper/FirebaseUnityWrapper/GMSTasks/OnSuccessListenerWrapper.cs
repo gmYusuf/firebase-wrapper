@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace HuaweiMobileServices.Base
+namespace GMSTasks
 {
 
     // Wrapper for com.google.android.gms.tasks.OnSuccessListener

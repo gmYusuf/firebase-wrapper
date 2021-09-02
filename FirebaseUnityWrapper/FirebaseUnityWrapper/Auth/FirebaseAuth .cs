@@ -14,5 +14,8 @@ namespace FirebaseUnityWrapper.Auth
         public static FirebaseAuth Instance => androidJavaClass.CallStatic<AndroidJavaObject>("getInstance").AsWrapper<FirebaseAuth>();
 
         public FirebaseUser CurrentUser => CallAsWrapper<FirebaseUser>("getCurrentUser");
+
+        public Task<FirebaseUser> createUserWithEmailAndPassword(string email, string password) =>
+            CallAsWra
     }
 }
