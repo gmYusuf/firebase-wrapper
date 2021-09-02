@@ -1,7 +1,7 @@
-﻿namespace AndroidUtils
-{
+﻿using UnityEngine;
 
-    using UnityEngine;
+namespace AndroidUtils
+{
 
     internal static class JavaReflectionUtils
     {

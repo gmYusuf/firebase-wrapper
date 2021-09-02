@@ -1,12 +1,13 @@
-﻿namespace FirebaseUnityWrapper.Auth
+﻿using AndroidUtils;
+using UnityEngine;
+
+namespace FirebaseUnityWrapper.Auth
 {
-    using AndroidUtils;
-    using UnityEngine;
 
     // Wrapper for com.google.firebase.auth.FirebaseAuth
     public class FirebaseAuth : JavaObjectWrapper
     {
-        private static AndroidJavaClass androidJavaClass = new AndroidJavaClass("com.google.firebase.auth.FirebaseAuth");
+        private static readonly AndroidJavaClass androidJavaClass = new AndroidJavaClass("com.google.firebase.auth.FirebaseAuth");
 
         public FirebaseAuth(AndroidJavaObject javaObject) : base(javaObject) { }
 

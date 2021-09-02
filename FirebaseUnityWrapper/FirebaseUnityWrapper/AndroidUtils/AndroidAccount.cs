@@ -1,6 +1,7 @@
-﻿namespace AndroidUtils
+﻿using UnityEngine;
+
+namespace AndroidUtils
 {
-    using UnityEngine;
 
     // Wrapper for android.accounts.Account
     public class AndroidAccount : JavaObjectWrapper

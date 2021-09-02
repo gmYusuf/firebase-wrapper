@@ -1,7 +1,8 @@
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace AndroidUtils
 {
-    using System.Collections.Generic;
-    using UnityEngine;
 
     public abstract class JavaObjectWrapper
     {

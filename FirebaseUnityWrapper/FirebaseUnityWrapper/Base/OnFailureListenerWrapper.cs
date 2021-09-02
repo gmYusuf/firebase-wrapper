@@ -1,7 +1,9 @@
-﻿namespace FirebaseUnityWrapper.Base
+﻿using AndroidUtils;
+using System;
+using UnityEngine;
+
+namespace FirebaseUnityWrapper.Base
 {
-    using System;
-    using UnityEngine;
 
     // Wrapper for com.google.android.gms.tasks.OnFailureListener
     internal class OnFailureListenerWrapper : AndroidJavaProxy

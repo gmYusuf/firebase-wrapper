@@ -1,6 +1,7 @@
-﻿namespace FirebaseUnityWrapper.Base
+﻿using System;
+
+namespace FirebaseUnityWrapper.Base
 {
-    using System;
 
     // Wrapper for com.google.android.gms.tasks.Task
     public interface ITask<T>

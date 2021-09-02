@@ -1,8 +1,8 @@
 ﻿using System;
+using UnityEngine;
 
 namespace AndroidUtils
 {
-    using UnityEngine;
 
     public class AndroidException : Exception
     {

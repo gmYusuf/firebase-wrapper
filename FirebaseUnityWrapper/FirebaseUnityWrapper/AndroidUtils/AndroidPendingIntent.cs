@@ -1,6 +1,7 @@
-﻿namespace AndroidUtils
+﻿using UnityEngine;
+
+namespace AndroidUtils
 {
-    using UnityEngine;
 
     public class AndroidPendingIntent : JavaObjectWrapper
     {

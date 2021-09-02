@@ -1,6 +1,7 @@
-﻿namespace AndroidUtils
+﻿using UnityEngine;
+
+namespace AndroidUtils
 {
-    using UnityEngine;
 
     internal static class AndroidJavaClassExtensions
     {

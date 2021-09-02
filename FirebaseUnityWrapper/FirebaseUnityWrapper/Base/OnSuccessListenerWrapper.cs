@@ -1,7 +1,8 @@
-﻿namespace HuaweiMobileServices.Base
+﻿using System;
+using UnityEngine;
+
+namespace HuaweiMobileServices.Base
 {
-    using System;
-    using UnityEngine;
 
     // Wrapper for com.google.android.gms.tasks.OnSuccessListener
     // For Java class instances, needs conversion function

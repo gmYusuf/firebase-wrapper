@@ -1,9 +1,10 @@
-﻿namespace FirebaseUnityWrapper.Base
+﻿using AndroidUtils;
+using System.Threading.Tasks;
+using UnityEngine;
+using System;
+
+namespace FirebaseUnityWrapper.Base
 {
-    using AndroidUtils;
-    using System.Threading.Tasks;
-    using UnityEngine;
-    using System;
 
     internal abstract class AbstractTask<T> : JavaObjectWrapper, ITask<T>
     {

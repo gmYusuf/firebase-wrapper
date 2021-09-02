@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace AndroidUtils
 {
-    using UnityEngine;
 
     internal static class AndroidJavaObjectExtensions
     {
