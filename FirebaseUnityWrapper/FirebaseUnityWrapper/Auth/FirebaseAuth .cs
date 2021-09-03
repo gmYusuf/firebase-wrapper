@@ -1,4 +1,5 @@
 ﻿using AndroidUtils;
+using FirebaseUnityWrapper.GMSTasks;
 using GMSTasks;
 using UnityEngine;
 
@@ -16,10 +17,12 @@ namespace FirebaseUnityWrapper.Auth
 
         public FirebaseUser CurrentUser => CallAsWrapper<FirebaseUser>("getCurrentUser");
 
-        public ITask<FirebaseUser> CreateUserWithEmailAndPassword(string email, string password)
-        {
-            var javaTask = Call<AndroidJavaObject>("createUserWithEmailAndPassword", email, password);
-            return new TaskJavaObjectWrapper<FirebaseUser>(javaTask);
-        }
+        public ITask<AuthResult> CreateUserWithEmailAndPassword(string email, string password) => Call<AndroidJavaObject>("createUserWithEmailAndPassword", email, password).AsITask<AuthResult>();
+
+        public ITask<AuthResult> SignInWithEmailAndPassword(string email, string password) => Call<AndroidJavaObject>("signInWithEmailAndPassword", email, password).AsITask<AuthResult>();
+
+        public ITask<AuthResult> SignInAnonymously() => Call<AndroidJavaObject>("signInAnonymously").AsITask<AuthResult>();
+
+        public ITask<AuthResult> SignInWithCustomToken(string token) => Call<AndroidJavaObject>("signInWithCustomToken", token).AsITask<AuthResult>();
     }
 }

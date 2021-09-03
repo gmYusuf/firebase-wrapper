@@ -2,9 +2,10 @@ using System;
 using UnityEngine;
 
 namespace GMSTasks
+{ 
 
     // Note: this class cannot be called with AsWrapper() since constructor has 2 parameters
-internal class TaskWrapper<T> : AbstractTask<T>
+    internal class TaskWrapper<T> : AbstractTask<T>
     {
 
         private readonly Func<AndroidJavaObject, T> mConverter;
