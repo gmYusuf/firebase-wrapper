@@ -1,4 +1,5 @@
-﻿using GMSTasks;
+﻿using AndroidUtils;
+using GMSTasks;
 using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
@@ -9,6 +10,6 @@ namespace FirebaseUnityWrapper.GMSTasks
 {
     internal static class TaskUtils
     {
-        public static ITask<T> AsITask<T>(this AndroidJavaObject javaObject) where T: AndroidJavaObject => new TaskJavaObjectWrapper<T>(javaObject);
+        public static ITask<T> AsITask<T>(this AndroidJavaObject javaObject) where T: JavaObjectWrapper => new TaskJavaObjectWrapper<T>(javaObject);
     }
 }

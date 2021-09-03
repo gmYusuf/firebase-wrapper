@@ -6,6 +6,7 @@ namespace FirebaseUnityWrapper.Auth
 {
     public class FirebaseUser : JavaObjectWrapper
     {
+        [UnityEngine.Scripting.Preserve]
         public FirebaseUser(AndroidJavaObject javaObject) : base(javaObject) { }
 
         public string DisplayName => Call<string>("getDisplayName");
