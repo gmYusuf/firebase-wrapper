@@ -7,7 +7,6 @@ namespace FirebaseUnityWrapper.Storage
     {
         private static readonly AndroidJavaClass androidJavaClass = new AndroidJavaClass("com.google.firebase.storage.FirebaseStorage");
 
-        [UnityEngine.Scripting.Preserve]
         public FirebaseStorage(AndroidJavaObject javaObject) : base(javaObject) { }
 
         public static FirebaseStorage Instance => androidJavaClass.CallStaticAsWrapper<FirebaseStorage>("getInstance");

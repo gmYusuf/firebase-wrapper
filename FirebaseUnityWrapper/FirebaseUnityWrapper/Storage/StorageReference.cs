@@ -7,8 +7,6 @@ namespace FirebaseUnityWrapper.Storage
 {
     public class StorageReference : JavaObjectWrapper
     {
-
-        [UnityEngine.Scripting.Preserve]
         public StorageReference(AndroidJavaObject javaObject) : base(javaObject) { }
 
         public StorageReference Child(string path) => CallAsWrapper<StorageReference>("child", path);

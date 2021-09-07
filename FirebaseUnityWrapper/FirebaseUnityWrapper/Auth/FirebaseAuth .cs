@@ -11,7 +11,6 @@ namespace FirebaseUnityWrapper.Auth
     {
         private static readonly AndroidJavaClass androidJavaClass = new AndroidJavaClass("com.google.firebase.auth.FirebaseAuth");
 
-        [UnityEngine.Scripting.Preserve]
         public FirebaseAuth(AndroidJavaObject javaObject) : base(javaObject) { }
 
         public static FirebaseAuth Instance => androidJavaClass.CallStaticAsWrapper<FirebaseAuth>("getInstance");

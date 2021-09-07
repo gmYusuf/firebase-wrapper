@@ -9,7 +9,6 @@ namespace GMSTasks
     {
 
         private readonly Func<AndroidJavaObject, T> mConverter;
-
         
         internal TaskWrapper(AndroidJavaObject javaObject, Func<AndroidJavaObject, T> func) : base(javaObject)
         {
