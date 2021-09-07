@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -23,6 +24,7 @@ namespace AndroidUtils
 
         internal protected void Call(string methodName, params object[] args) => JavaObject.Call(methodName, args.AsAutoParams());
 
+        [Obsolete]
         internal protected string CallAsString(string methodName, params object[] args) =>
             Call<AndroidJavaObject>(methodName, args.AsAutoParams())?.AsString();
 

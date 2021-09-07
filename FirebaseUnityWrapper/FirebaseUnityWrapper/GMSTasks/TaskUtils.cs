@@ -1,12 +1,8 @@
 ﻿using AndroidUtils;
 using GMSTasks;
-using System;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using System.Text;
 using UnityEngine;
 
-namespace FirebaseUnityWrapper.GMSTasks
+namespace GMSTasks
 {
     internal static class TaskUtils
     {
@@ -14,5 +10,15 @@ namespace FirebaseUnityWrapper.GMSTasks
 
         public static ITask<T> CallAsITask<T>(this JavaObjectWrapper javaObject, string methodName, params object[] args) where T : JavaObjectWrapper => 
             javaObject.Call<AndroidJavaObject>(methodName, args.AsAutoParams()).AsITask<T>();
+
+        public static ITask<Void> AsVoidITask(this AndroidJavaObject javaObject) => new TaskVoidWrapper(javaObject);
+
+        public static ITask<Void> CallAsVoidITask(this JavaObjectWrapper javaObject, string methodName, params object[] args) =>
+            javaObject.Call<AndroidJavaObject>(methodName, args.AsAutoParams()).AsVoidITask();
+
+        public static ITask<byte[]> AsByteArrayITask(this AndroidJavaObject javaObject) => new TaskPrimitiveByteArray(javaObject);
+
+        public static ITask<byte[]> CallAsByteArrayITask(this JavaObjectWrapper javaObject, string methodName, params object[] args) =>
+            javaObject.Call<AndroidJavaObject>(methodName, args.AsAutoParams()).AsByteArrayITask();
     }
 }
