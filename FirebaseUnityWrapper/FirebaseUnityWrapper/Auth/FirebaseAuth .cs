@@ -1,5 +1,4 @@
 ﻿using AndroidUtils;
-using FirebaseUnityWrapper.GMSTasks;
 using GMSTasks;
 using UnityEngine;
 
@@ -24,5 +23,9 @@ namespace FirebaseUnityWrapper.Auth
         public ITask<AuthResult> SignInAnonymously() => this.CallAsITask<AuthResult>("signInAnonymously");
 
         public ITask<AuthResult> SignInWithCustomToken(string token) => this.CallAsITask<AuthResult>("signInWithCustomToken", token);
+
+        public ITask<SignInMethodQueryResult> FetchSignInMethodsForEmail(string email) => this.CallAsITask<SignInMethodQueryResult>("fetchSignInMethodsForEmail ", email);
+
+
     }
 }

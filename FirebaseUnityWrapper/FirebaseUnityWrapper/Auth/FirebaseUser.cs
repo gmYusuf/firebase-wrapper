@@ -27,5 +27,20 @@ namespace FirebaseUnityWrapper.Auth
             var javaObject = Call<AndroidJavaObject>("getIdToken", forceRefresh);
             return new TaskJavaObjectWrapper<GetTokenResult>(javaObject);
         }
+        public ITask<AuthResult> LinkWithCredential(AuthCredential credential)
+        {
+            var javaObject = Call<AndroidJavaObject>("linkWithCredential", credential);
+            return new TaskJavaObjectWrapper<AuthResult>(javaObject);
+        }
+        public ITask<Void> Delete => CallAsWrapper<TaskVoidWrapper>("delete");
+     
+        public ITask<AuthResult> Unlink(string provider)
+        {
+            var javaObject = Call<AndroidJavaObject>("unlink", provider);
+            return new TaskJavaObjectWrapper<AuthResult>(javaObject);
+        }
+        public ITask<Void> SendEmailVerification() => CallAsWrapper<TaskVoidWrapper>("sendEmailVerification");
+        public ITask<Void> SendEmailVerification(ActionCodeSettings actionCodeSettings) => CallAsWrapper<TaskVoidWrapper>("sendEmailVerification", actionCodeSettings);
+
     }
 }

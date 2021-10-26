@@ -10,6 +10,13 @@ namespace FirebaseUnityWrapper.Auth
     {
         public AuthResult(AndroidJavaObject javaObject) : base(javaObject) { }
 
-        public FirebaseUser User => JavaObject.AsWrapper<FirebaseUser>();
+        private static readonly AndroidJavaClass androidJavaClass = new AndroidJavaClass("com.google.firebase.auth.AuthResult");
+
+        public AdditionalUserInfo AdditionalUserInfo => CallAsWrapper<AdditionalUserInfo>("getAdditionalUserInfo");
+
+        public FirebaseUser User => CallAsWrapper<FirebaseUser>("getUser");
+
+        public AuthCredential Credential => CallAsWrapper<AuthCredential>("getCredential");
+
     }
 }
