@@ -1,5 +1,6 @@
 ﻿using AndroidUtils;
 using GMSTasks;
+using System;
 using UnityEngine;
 
 namespace FirebaseUnityWrapper.Auth
@@ -15,6 +16,8 @@ namespace FirebaseUnityWrapper.Auth
         public static FirebaseAuth Instance => androidJavaClass.CallStaticAsWrapper<FirebaseAuth>("getInstance");
 
         public FirebaseUser CurrentUser => CallAsWrapper<FirebaseUser>("getCurrentUser");
+        public void SignOut() => Call("signOut");
+        public void UseAppLanguage() => Call("useAppLanguage");
 
         public ITask<AuthResult> CreateUserWithEmailAndPassword(string email, string password) => this.CallAsITask<AuthResult>("createUserWithEmailAndPassword", email, password);
 
@@ -25,6 +28,13 @@ namespace FirebaseUnityWrapper.Auth
         public ITask<AuthResult> SignInWithCustomToken(string token) => this.CallAsITask<AuthResult>("signInWithCustomToken", token);
 
         public ITask<SignInMethodQueryResult> FetchSignInMethodsForEmail(string email) => this.CallAsITask<SignInMethodQueryResult>("fetchSignInMethodsForEmail ", email);
+
+        public ITask<AuthResult> CheckActionCode(string code) => this.CallAsITask<AuthResult>("checkActionCode", code);
+        public ITask<global::AndroidUtils.Void> ConfirmPasswordReset(string code, string newPassword) => this.CallAsVoidITask("confirmPasswordReset", code, newPassword);
+        public ITask<String> VerifyPasswordResetCode(string code) => CallAsWrapper<TaskPrimitive<string>>("verifyPasswordResetCode", code);
+
+        
+
 
 
     }

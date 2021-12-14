@@ -1,7 +1,8 @@
 ﻿using AndroidUtils;
 using GMSTasks;
-using System;
 using UnityEngine;
+using FirebaseUnityWrapper.Storage.StorageTask;
+using static FirebaseUnityWrapper.Storage.StorageTask.UploadTask;
 
 namespace FirebaseUnityWrapper.Storage
 {
@@ -24,5 +25,17 @@ namespace FirebaseUnityWrapper.Storage
         public string Name => Call<string>("getName");
 
         public string Path => Call<string>("getPath");
+
+        public ITask<StorageMetadata> Metadata => this.CallAsITask<StorageMetadata>("getMetadata");
+        public ITask<StorageMetadata> UpdateMetadata(StorageMetadata metadata) => this.CallAsITask<StorageMetadata>("updateMetadata", metadata);
+        public ITask<ListResult> ListAll => this.CallAsITask<ListResult>("listAll");
+        public ITask<ListResult> List(int maxResults) => this.CallAsITask<ListResult>("list");
+
+        public ITask<ListResult> ListAfterPageToken(int maxResults, string pageToken) => this.CallAsITask<ListResult>("list", maxResults, pageToken);
+
+        public ITask<TaskSnapshot> PutBytes(byte[] bytes) => this.CallAsITask<TaskSnapshot>("putBytes", bytes);
+        public ITask<TaskSnapshot> PutStream(AndroidJavaObject stream) => this.CallAsITask<TaskSnapshot>("putStream", stream);
+        public ITask<TaskSnapshot> PutFile(AndroidJavaObject Uri, StorageMetadata storageMetadata) => this.CallAsITask<TaskSnapshot>("putFile", storageMetadata);
+
     }
 }

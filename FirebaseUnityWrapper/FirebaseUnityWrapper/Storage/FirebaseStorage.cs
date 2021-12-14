@@ -11,8 +11,6 @@ namespace FirebaseUnityWrapper.Storage
 
         public static FirebaseStorage Instance => androidJavaClass.CallStaticAsWrapper<FirebaseStorage>("getInstance");
 
-        public static FirebaseStorage GetInstance() => androidJavaClass.CallStaticAsWrapper<FirebaseStorage>("getInstance");
-
         public static FirebaseStorage GetInstance(string url) => androidJavaClass.CallStaticAsWrapper<FirebaseStorage>("getInstance", url);
 
         public StorageReference Reference => CallAsWrapper<StorageReference>("getReference");

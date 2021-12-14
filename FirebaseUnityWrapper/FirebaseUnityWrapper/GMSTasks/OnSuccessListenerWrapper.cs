@@ -31,7 +31,7 @@ namespace GMSTasks
     {
         protected readonly Action<T> mListener;
 
-        public OnSuccessListenerWrapper(Action<T> listener) : base("com.huawei.hmf.tasks.OnSuccessListener")
+        public OnSuccessListenerWrapper(Action<T> listener) : base("com.google.android.gms.tasks.OnSuccessListener")
         {
             mListener = listener;
         }
